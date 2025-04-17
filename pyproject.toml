@@ -1,0 +1,65 @@
+[project]
+name = "aws-policies-analyzer-sdk"
+version = "0.1.0"
+description = "Tool for analyzing AWS IAM policies"
+readme = "README.md"
+authors = [
+    {name = "Bruno Adelé", email = "bruno.adele@gmail.com"}
+]
+license = {text = "GPL3"}
+
+requires-python = ">=3.11"
+dependencies = [
+    "boto3",
+]
+
+[tool.poetry.group.dev.dependencies]
+python = "^3.11"
+pytest = ">=7.0.0"
+pytest-cov = "*"
+pytest-xdist = "*"
+black = "*"
+isort = "*"
+mypy = "*"
+flake8 = "*"
+mkdocs-material = "*"
+
+
+[project.scripts]
+aws_policies_analyzer-sdk = "aws_policies_analyzer.cli:main"
+
+
+# # [tool.setuptools]
+# # package-dir = {"" = "src"}
+# # packages = ["aws_policies_analyzer-sdk"]
+#
+#
+# # [tool.pytest.ini_options]
+# # pythonpath = ["src"]
+# # testpaths = ["tests"]
+# # python_files = "test_*.py"
+# # python_classes = "Test*"
+# # python_functions = "test_*"
+# # addopts = "-xvs --cov=aws_policies_analyzer-sdk --cov-report=term-missing"
+
+
+[tool.black]
+line-length = 88
+target-version = ["py38"]
+
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"

@@ -1,0 +1,36 @@
+{
+  "roles": {},
+  "policies": {
+    "arn:aws:iam::aws:policy/TestPolicy1": {
+      "name": "TestPolicy1",
+      "roles": [],
+      "actions": [
+        "ec2:*"
+      ],
+      "services": [
+        "ec2"
+      ]
+    }
+  },
+  "actions": {
+    "ec2:*": {
+      "roles": [],
+      "policies": [
+        "arn:aws:iam::aws:policy/TestPolicy1",
+        "arn:aws:iam::aws:policy/TestPolicy2"
+      ]
+    }
+  },
+  "services": {
+    "ec2": {
+      "roles": [],
+      "policies": [
+        "arn:aws:iam::aws:policy/TestPolicy1",
+        "arn:aws:iam::aws:policy/TestPolicy2"
+      ],
+      "actions": [
+        "ec2:*"
+      ]
+    }
+  }
+}

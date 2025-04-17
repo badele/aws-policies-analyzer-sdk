@@ -1,0 +1,8 @@
+__pycache__
+/src/*.egg-info/
+.coverage
+
+.direnv
+__pycache__
+
+*_cache.json
