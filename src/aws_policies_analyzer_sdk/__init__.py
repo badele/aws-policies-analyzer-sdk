@@ -76,7 +76,13 @@ def slugify(text: str) -> str:
     Returns:
         The slugified version of the input text
     """
-    return text.lower().replace(" ", "-").replace("/", "-").replace("*", "all")
+    return (
+        text.lower()
+        .replace(" ", "-")
+        .replace("/", "-")
+        .replace(":", "-")
+        .replace("*", "all")
+    )
 
 
 def remove_policies_not_managed_by_aws(
